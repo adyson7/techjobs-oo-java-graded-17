@@ -32,15 +32,17 @@ public  String toString() {
         return Objects.hash(id, value);
     }
 
-}
-@Override
-public int HashCode() {
-        return Objects.hash(id);
-}
-    // Getters and Setters:
-
     public int getId() {
         return id;
+    }
+    // Getters and Setters:
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        PositionType that = (PositionType) o;
+        return id == that.id && Objects.equals(value, that.value);
     }
 
     public String getValue() {
