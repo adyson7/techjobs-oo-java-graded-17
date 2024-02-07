@@ -100,4 +100,9 @@ public class Job {
     public int hashCode() {
         return Objects.hash(id);
     }
+    @Override
+    public String toString() {
+        return String.format("%sID: %d\nName: Data not available\nEmployer: Data not available\nLocation: Data not available\nPosition Type: Data not available\nCore Competency: Data not available\n%s",
+                System.lineSeparator(), this.id, System.lineSeparator());
+    }
 }
