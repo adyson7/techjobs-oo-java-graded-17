@@ -25,7 +25,15 @@ public class JobTest {
         assertEquals("Desert", job.getLocation().getValue());
         assertEquals("Quality control", job.getPositionType().getValue());
         assertEquals("Persistence", job.getCoreCompetency().getValue());
+
+        assertTrue(job.getName() instanceof String);
+        assertTrue(job.getEmployer() instanceof Employer);
+        assertTrue(job.getLocation() instanceof Location);
+        assertTrue(job.getPositionType() instanceof PositionType);
+        assertTrue(job.getCoreCompetency() instanceof CoreCompetency);
+
     }
+
     //assertTrue and assertEquals statements used to verify that the constructor correctly assigns both the class and value of each field
     @Test
     public void testJobsForEquality() {
