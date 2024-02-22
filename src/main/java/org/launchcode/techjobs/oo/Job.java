@@ -100,9 +100,25 @@ public class Job {
     public int hashCode() {
         return Objects.hash(id);
     }
-    @Override
-    public String toString() {
-        return String.format("%sID: %d\nName: Data not available\nEmployer: Data not available\nLocation: Data not available\nPosition Type: Data not available\nCore Competency: Data not available\n%s",
-                System.lineSeparator(), this.id, System.lineSeparator());
-    }
-}
+            @Override
+            public String toString() {
+                String newLine = System.lineSeparator();
+                if (name.isEmpty()) {
+                    name = "Data not available";
+                }
+                if (employer.getValue().isEmpty() || employer.getValue() == null) {
+                    employer.setValue("Data not available");
+                }
+                return newLine +
+                        "ID:" + id + newLine +
+                        "Name:" + name + newLine +
+                        "Employer:" + employer.getValue() + newLine +
+                        "Location:" + location + newLine +
+                        "Position Type:" + positionType + newLine +
+                        "Core Competency:" + coreCompetency + newLine;
+            }
+
+        }
+
+
+

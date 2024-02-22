@@ -17,8 +17,6 @@ public class CoreCompetency extends JobField {
         super (value);
     }
 
-    // Custom toString, equals, and hashCode methods:
-
     @Override
     public String toString() {
         return super.toString();
